@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Login</title>
+</head>
+<body>
+	<f:view>
+		<h2>Excluir Contato</h2>
+		<h4>Digite o nome  e o telefone do contato que deseja exluir(exatamente igual)</h4>
+		<fieldset>
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Nome: " />
+					<h:inputText id="nome" size="40" required="false"
+						requiredMessage="Campo obrigatorio" value="#{agendaBean.nome}" />
+					<h:outputLabel value="Telefone: " />
+					<h:inputText id="Telefone" size="20" required="false"
+						requiredMessage="Campo obrigatorio" value="#{agendaBean.tel}" />
+					<br />
+				</h:panelGrid>
+				<h:commandButton value="Deletar" action="#{agendaBean.deletarContato()}" />
+				<h:form>
+					<h:commandButton value="Voltar" action="#{agendaBean.goHome()}" />
+				</h:form>
+				
+				<br />
+				<h:dataTable value="#{agendaBean.agenda}" var="contato" border="" frame="box">
+					<h:column>
+						<f:facet name="header">Nome</f:facet>    				
+			      #{contato.nome}
+			   </h:column>
+					<h:column>
+						<f:facet name="header">Telefone</f:facet>
+			      #{contato.tel}
+			   </h:column>
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+			       #{contato.email}
+			   </h:column>
+					<h:column>
+						<f:facet name="header">Endereco</f:facet>
+			       #{contato.end}
+			   </h:column>
+				</h:dataTable>
+
+			</h:form>
+		</fieldset>
+	</f:view>
+</body>
+</html>

@@ -1,0 +1,71 @@
+Desenvolvimento Web II
+Professor Dr. Carlos Eduardo
+Aluno - Cephas Barreto - 2013023300
+
+
+------- Projeto Agenda -------
+
+Projeto básico de agenda de contatos.
+As funções disponíveis em cada página são as mesmas denotadas pelas açoes dos botões.
+
+------------------------------
+	Páginas Criadas
+------------------------------
+login.xhtml
+	formulario para cadastramento de contato
+		>botao entrar
+
+erroLogin.xhtml
+		>botao cadastrar(inativo ate o momento - opcional)
+		
+home.xhtml
+	listagem de contatos atualizada dependente da sessão
+		>botao Cadastrar contato
+		>botao Editar contato
+		>botao deletar contato
+		>botao logout
+
+cadastrarContato.xhtml
+	listagem de contatos atualizada
+	formulario para cadastramento de contato
+		>botao confirmar
+		>botao voltar(home)
+
+editarContato.xhtml
+	listagem de contatos atualizada
+	formulario para edicao de contato
+		>botao editar
+		>botao voltar(home)
+
+editarContatoFinal.xhtml
+	formulario para edicao com recuperacao de dados do contato
+		>botao COnfirmar Edicao
+		>botao voltar(Editar)
+
+deletarContato.xhtml
+	listagem de contatos atualizada
+	formulario para delecao de contato
+		>botao confirmar
+		>botao voltar(home)
+
+------------------------------
+	Beans criados
+------------------------------
+
+agendaBean.java
+
+classe que contem todos os controles de métodos, acessos
+e também o trabalho com a persistência dos dados(feitos em listas e objetos estáticos)
+
+------------------------------
+	Modelo de dados
+------------------------------
+
+Usuario.java - definicao de usuario com login e senha
+Contato.java - definicao de contato com nome, email, telefone e endereço
+
+------------------------------
+	Dificuldades
+------------------------------
+
+Criar uma camada de login que permitisse a criação de listagens estáticas de contatos de forma diferente para cada usuário em tão pouco tempo e com a concorrência das outras matérias foi absurdamente difícil, tanto é que desisti e acabei fazendo o bean único que persiste durante a aplicação, mas que tem seus atributos(listas e demais objetos) sobrescritos para cada novo login.
